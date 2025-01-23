@@ -114,11 +114,18 @@ document.querySelectorAll(".add-to-cart").forEach((button) => {
       });
     }
 
+    let totalCartQuantity = 0;    //       Store Total Quantity;
+
+    cart.forEach((item) => {
+      totalCartQuantity += item.quantity;
+    })
+
     // cart.push({
     //   productName: button.dataset.nameOfProduct,
     //   quantity: 1,
     // });
 
-    console.log(cart);
+    document.querySelector('.js-cart-quantity').innerHTML = totalCartQuantity;
+    
   });
 });
